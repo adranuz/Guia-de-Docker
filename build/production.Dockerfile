@@ -1,6 +1,6 @@
 FROM node:12 as builder
 
-COPY ["package.json", "package-lock.json", "/usr/src/"]
+COPY ["package*.json", "/usr/src/"]
 
 WORKDIR /usr/src
 
@@ -16,7 +16,7 @@ RUN npm run test
 # Productive image
 FROM node:12
 
-COPY ["package.json", "package-lock.json", "/usr/src/"]
+COPY ["package*.json", "/usr/src/"]
 
 WORKDIR /usr/src
 
